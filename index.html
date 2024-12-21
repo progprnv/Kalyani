@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encoder Decoder Tool</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <h1>Encoder & Decoder Tool</h1>
+      <div class="columns">
+        <div class="column">
+          <h2>Encode</h2>
+          <textarea id="encodeInput" placeholder="Enter text to encode..." rows="8"></textarea>
+          <button onclick="encode()">Encode</button>
+          <h3>Encoded Output:</h3>
+          <textarea id="encodeOutput" readonly rows="8"></textarea>
+        </div>
+        <div class="column">
+          <h2>Decode</h2>
+          <textarea id="decodeInput" placeholder="Enter encoded text..." rows="8"></textarea>
+          <button onclick="decode()">Decode</button>
+          <h3>Decoded Output:</h3>
+          <textarea id="decodeOutput" readonly rows="8"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
