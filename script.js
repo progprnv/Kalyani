@@ -1,55 +1,47 @@
-function encode() {
-  const text = document.getElementById("encodeInput").value;
-  const base64Encoded = btoa(text);
-  const base32Encoded = base32Encode(text);
-  const base58Encoded = base58Encode(text);
-  const urlEncoded = encodeURIComponent(text);
+function processText() {
+  const inputText = document.getElementById("inputText").value;
+  const encodeDecodeType = document.getElementById("encodeDecodeType").value;
+  
+  let outputText = '';
 
-  document.getElementById("encodeOutput").value = `
-Base64: ${base64Encoded}
-Base32: ${base32Encoded}
-Base58: ${base58Encoded}
-URL Encoded: ${urlEncoded}
-  `;
-}
-
-function decode() {
-  const text = document.getElementById("decodeInput").value;
-  try {
-    const base64Decoded = atob(text);
-    const urlDecoded = decodeURIComponent(text);
-    const base32Decoded = base32Decode(text);
-    const base58Decoded = base58Decode(text);
-
-    document.getElementById("decodeOutput").value = `
-Base64 Decoded: ${base64Decoded}
-URL Decoded: ${urlDecoded}
-Base32 Decoded: ${base32Decoded}
-Base58 Decoded: ${base58Decoded}
-    `;
-  } catch (e) {
-    document.getElementById("decodeOutput").value = "Invalid encoded text";
+  switch (encodeDecodeType) {
+    case "Base64":
+      outputText = btoa(inputText); // Base64 encode
+      break;
+    case "Base32":
+      outputText = base32Encode(inputText); // Base32 encode
+      break;
+    case "Base58":
+      outputText = base58Encode(inputText); // Base58 encode
+      break;
+    case "URL":
+      outputText = encodeURIComponent(inputText); // URL encode
+      break;
+    case "HTML":
+      outputText = escapeHtml(inputText); // HTML encode
+      break;
+    default:
+      outputText = "Invalid encoding type";
   }
+
+  document.getElementById("outputText").value = outputText;
 }
 
-// Base32 Encoding & Decoding
+// Base32 Encoding (simple placeholder)
 function base32Encode(str) {
-  // A simple Base32 encoding function (using a placeholder for simplicity)
-  return btoa(str).replace(/=/g, ''); // Placeholder logic, replace with an actual Base32 algorithm
+  return btoa(str).replace(/=/g, ''); // Replace with actual Base32 logic
 }
 
-function base32Decode(str) {
-  // A simple Base32 decoding function (using a placeholder for simplicity)
-  return atob(str); // Placeholder logic, replace with an actual Base32 algorithm
-}
-
-// Base58 Encoding & Decoding
+// Base58 Encoding (simple placeholder)
 function base58Encode(str) {
-  // A simple Base58 encoding function (using a placeholder for simplicity)
-  return btoa(str).replace(/=/g, ''); // Placeholder logic, replace with an actual Base58 algorithm
+  return btoa(str).replace(/=/g, ''); // Replace with actual Base58 logic
 }
 
-function base58Decode(str) {
-  // A simple Base58 decoding function (using a placeholder for simplicity)
-  return atob(str); // Placeholder logic, replace with an actual Base58 algorithm
+// HTML Encoding
+function escapeHtml(str) {
+  return str.replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
 }
