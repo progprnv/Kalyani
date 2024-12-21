@@ -11,6 +11,7 @@
   <div class="container">
     <div class="box">
       <h1>Kalyani - Encoder & Decoder Tool</h1>
+      
       <select id="encodeDecodeType">
         <option value="Base64">Base64</option>
         <option value="Base32">Base32</option>
@@ -21,7 +22,10 @@
 
       <textarea id="inputText" placeholder="Enter text to encode or decode..." rows="8"></textarea>
 
-      <button onclick="processText()">Encode/Decode</button>
+      <div class="buttons">
+        <button onclick="encodeText()">Encode</button>
+        <button onclick="decodeText()">Decode</button>
+      </div>
 
       <h3>Output:</h3>
       <textarea id="outputText" readonly rows="8"></textarea>
