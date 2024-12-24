@@ -16,3 +16,7 @@ The ability to easily switch between encoding formats allows security researcher
 - **Security Research**: For researchers exploring new attack vectors or testing vulnerabilities, the ability to encode and decode in different formats is crucial for experimenting with various encoding schemes and payloads.
 - **Educational Purposes**: For students and beginners in cybersecurity, understanding how different encoding schemes work and how to use them in practical scenarios is essential. Kalyani provides a simple, easy-to-use interface for learning and experimenting with encodings.
 
+.
+.
+.
+.
