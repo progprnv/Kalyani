@@ -1,4 +1,4 @@
-
+ 
 # Kalyani - Encoder & Decoder Tool
 
 **Kalyani** is a simple yet powerful web-based tool designed for encoding and decoding various formats such as Base64, Base32, Base58, and URL encoding. This tool is especially useful for cybersecurity professionals and ethical hackers who need to encode and decode payloads for web application security testing, including tasks like XSS (Cross-Site Scripting) payload encoding and decoding.
